@@ -19,6 +19,7 @@ import {
   BarChart,
   Shield,
   Smartphone,
+  LucideIcon,
 } from "lucide-react";
 
 const MotionLink = motion(Link);
@@ -73,7 +74,11 @@ export default function LandingPage() {
     feature,
     index,
   }: {
-    feature: string;
+    feature: {
+      description: string;
+      icon: LucideIcon;
+      title: string;
+    };
     index: number;
   }) => {
     const controls = useAnimation();

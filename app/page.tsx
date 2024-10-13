@@ -69,7 +69,13 @@ export default function LandingPage() {
     visible: { opacity: 1, y: 0 },
   };
 
-  const FeatureCard = ({ feature, index }) => {
+  const FeatureCard = ({
+    feature,
+    index,
+  }: {
+    feature: string;
+    index: number;
+  }) => {
     const controls = useAnimation();
     const [ref, inView] = useInView({
       triggerOnce: true,

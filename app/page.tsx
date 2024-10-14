@@ -185,7 +185,7 @@ export default function LandingPage() {
           <Link className="flex items-center justify-center" href="#home">
             <Layers className="h-6 w-6 text-[#302f2e]" />
             <span className="ml-2 text-xl font-bold text-[#302f2e]">
-              ChurchConnect
+              Ekklesia
             </span>
           </Link>
           <nav className="ml-auto hidden md:flex gap-4 sm:gap-6">
@@ -264,7 +264,7 @@ export default function LandingPage() {
               >
                 <div className="space-y-2">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                    Empower Your Church with ChurchConnect
+                    Empower Your Church with Ekklesia
                   </h1>
                   <p className="mx-auto max-w-[700px] text-[#302f2e]/80 md:text-xl">
                     The all-in-one SaaS solution for modern churches. Manage
@@ -515,7 +515,7 @@ export default function LandingPage() {
         <footer className="w-full py-6 bg-[#fbf8fa] border-t border-[#302f2e]">
           <div className="container px-4 md:px-6 flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-[#302f2e]/80">
-              © 2024 ChurchConnect. All rights reserved.
+              © 2024 Ekklesia. All rights reserved.
             </p>
             <nav className="flex gap-4 sm:gap-6 mt-4 md:mt-0">
               <Link

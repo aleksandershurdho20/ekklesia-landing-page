@@ -85,7 +85,6 @@ export default function LandingPage() {
 
   const FeatureCard = ({
     feature,
-    index,
   }: {
     feature: {
       description: string;
@@ -109,29 +108,29 @@ export default function LandingPage() {
     // }, [controls, inView]);
 
     return (
-      <motion.div
-        key={index}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.5 }}
-        transition={{ duration: 0.5, delay: index * 0.1 }}
-        variants={{
-          visible: { opacity: 1, y: 0 },
-          hidden: { opacity: 0, y: 20 },
-        }}
-      >
-        <Card className="h-full bg-[#fbf8fa] hover:shadow-lg transition-shadow duration-300 border-2 border-[#302f2e]">
-          <CardHeader>
-            <feature.icon className="h-8 w-8 mb-2 text-[#302f2e]" />
-            <CardTitle className="text-xl font-semibold text-[#302f2e]">
-              {feature.title}
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-[#302f2e]">{feature.description}</p>
-          </CardContent>
-        </Card>
-      </motion.div>
+      // <motion.div
+      //   key={index}
+      //   initial="hidden"
+      //   whileInView="visible"
+      //   viewport={{ once: false, amount: 0.5 }}
+      //   transition={{ duration: 0.5, delay: index * 0.1 }}
+      //   variants={{
+      //     visible: { opacity: 1, y: 0 },
+      //     hidden: { opacity: 0, y: 20 },
+      //   }}
+      // >
+      <Card className="h-full bg-[#fbf8fa] hover:shadow-lg transition-shadow duration-300 border-2 border-[#302f2e]">
+        <CardHeader>
+          <feature.icon className="h-8 w-8 mb-2 text-[#302f2e]" />
+          <CardTitle className="text-xl font-semibold text-[#302f2e]">
+            {feature.title}
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-[#302f2e]">{feature.description}</p>
+        </CardContent>
+      </Card>
+      // </motion.div>
     );
   };
 

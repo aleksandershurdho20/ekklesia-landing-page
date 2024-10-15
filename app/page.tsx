@@ -1,27 +1,26 @@
 "use client";
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Global, css } from "@emotion/react";
+import { motion } from "framer-motion";
 import {
-  Users,
+  BarChart,
   Calendar,
   CreditCard,
-  MessageCircle,
-  Video,
+  FileText,
   Globe,
   Layers,
+  LucideIcon,
   Menu,
-  X,
-  FileText,
-  BarChart,
+  MessageCircle,
   Shield,
   Smartphone,
-  LucideIcon,
+  Users,
+  Video,
+  X,
 } from "lucide-react";
-import { Global, css } from "@emotion/react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const globalStyles = css`
   @media (prefers-reduced-motion: reduce) {
@@ -95,32 +94,30 @@ export default function LandingPage() {
     };
     index: number;
   }) => {
-    const controls = useAnimation();
-    const [ref, inView] = useInView({
-      triggerOnce: false,
-      threshold: 0.1,
-    });
+    // const controls = useAnimation();
+    // const [ref, inView] = useInView({
+    //   triggerOnce: false,
+    //   threshold: 0.1,
+    // });
 
-    useEffect(() => {
-      if (inView) {
-        controls.start("visible");
-      } else {
-        controls.start("hidden");
-      }
-    }, [controls, inView]);
+    // useEffect(() => {
+    //   if (inView) {
+    //     controls.start("visible");
+    //   } else {
+    //     controls.start("hidden");
+    //   }
+    // }, [controls, inView]);
 
     return (
       <motion.div
-        ref={ref}
-        animate={controls}
+        key={index}
         initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.5 }}
+        transition={{ duration: 0.5, delay: index * 0.1 }}
         variants={{
-          visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.5, delay: index * 0.1 },
-          },
-          hidden: { opacity: 0, y: 50 },
+          visible: { opacity: 1, y: 0 },
+          hidden: { opacity: 0, y: 20 },
         }}
       >
         <Card className="h-full bg-[#fbf8fa] hover:shadow-lg transition-shadow duration-300 border-2 border-[#302f2e]">
